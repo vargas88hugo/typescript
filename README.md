@@ -1,4 +1,5 @@
 # Practice with typescript
+This is a practice about typescript syntax, design patterns and implementations with React and Express.
 
 # Content
 | Folder | Description |
