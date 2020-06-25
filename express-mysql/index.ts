@@ -6,7 +6,7 @@ const server = Server.init(3000);
 
 server.app.use(router);
 
-const mysql = new MySql();
+MySql.instance;
 
 server.start(() => {
   console.log('Server running on port 3000');
