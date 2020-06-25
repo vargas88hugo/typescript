@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "html": "copyfiles --up 1 src/public/*.html dist",
     "build": "tsc && npm run html",
     "start:dev": "nodemon dist/index"
   },
@@ -13,7 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "copyfiles": "^2.3.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
