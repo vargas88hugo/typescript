@@ -23,6 +23,29 @@ export default class MySql {
     return this._instance || (this._instance = new this());
   }
 
+  public static executeQuery(
+    query: string,
+    callback: (
+      err: mysql.MysqlError | string | null,
+      results?: Object[]
+    ) => void
+  ) {
+    this.instance.connection.query(query, (err, results: Object[], fields) => {
+      if (err) {
+        console.log('Query Error');
+        console.log(err);
+        callback(err);
+        return;
+      }
+
+      if (results.length === 0) {
+        callback("The requested register don't exist");
+      } else {
+        callback(null, results);
+      }
+    });
+  }
+
   private connectDB() {
     this.connection.connect((err: mysql.MysqlError) => {
       if (err) {
